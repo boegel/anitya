@@ -1,4 +1,9 @@
 language: python
+addons:
+  apt:
+    packages:
+      - rpm
+      - python-rpm
 env:
   matrix:
     - TOXENV=py26
