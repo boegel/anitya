@@ -3,7 +3,8 @@ addons:
   apt:
     packages:
       - rpm
-      - python-rpm
+before_script:
+  - sudo apt-get install python-rpm
 env:
   matrix:
     - TOXENV=py26
