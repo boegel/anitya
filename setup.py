@@ -39,7 +39,7 @@ def get_requirements(requirements_file='requirements.txt'):
         if not line.startswith('#')
     ]
 
-
+print('install_requires=%s' % get_requirements())
 setup(
     name='anitya',
     description='anitya is a project to monitor upstream releases in a distro.',
