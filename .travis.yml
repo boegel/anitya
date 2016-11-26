@@ -7,8 +7,8 @@ addons:
 before_script:
   - sudo apt-get install python-rpm
   - ls /usr/lib/python*/*packages/rpm/*
-  - python -c "import sys; print sys.path"
   - export PYTHONPATH=/usr/lib/python*/dist-packages:$PYTHONPATH
+  - python -c "import sys; print sys.path"
   - python -c 'import rpm'
 env:
   - TOXENV=py26
