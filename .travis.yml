@@ -5,10 +5,11 @@ addons:
     packages:
       - rpm
 before_script:
-  - sudo apt-get install python-rpm
+  - if [ "x$TRAVIS_PYTHON_VERSION" == 'x2.7' ]; then sudo apt-get install python-rpm; fi
+  - if [ "x$TRAVIS_PYTHON_VERSION" == 'x3.5' ]; then sudo apt-get install python3-rpm; fi
   - ls /usr/lib/python*/*packages/rpm/*
   - export PYTHONPATH=/usr/lib/python2.7/dist-packages:$PYTHONPATH
-  - python -c "import sys; print sys.path"
+  - python -c "import sys; print(sys.path)"
   - python -c 'import rpm'
 env:
   - TOXENV=py26
