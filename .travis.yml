@@ -1,5 +1,5 @@
 language: python
-python: 2.6
+python: 2.7
 addons:
   apt:
     packages:
@@ -12,12 +12,12 @@ before_script:
   - python -c "import sys; print(sys.path)"
   - python -c 'import rpm'
 env:
-  - TOXENV=py26
+  - TOXENV=py27
 matrix:
   include:
-    - python: 2.7
+    - python: 2.6
       env:
-      - TOXENV=py27
+      - TOXENV=py26
     - python: 3.5
       env:
       - TOXENV=py35
@@ -26,5 +26,6 @@ install:
     - pip install --upgrade setuptools
     - pip install -r requirements.txt
     - pip install tox
+    - pip install jinja2
 script:
     - tox
